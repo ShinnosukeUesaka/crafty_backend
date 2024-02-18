@@ -52,7 +52,7 @@ jobs:
       - name: Build Docker image
         run: |
           echo "source_folder=${SOURCE_FOLDER_NAME}"
-          docker build --build-arg SOURCEFOLDER=${SOURCE_FOLDER_NAME} -t ${{ env.IMAGE_PATH }}:${{ github.sha }} .
+          docker build --build-arg="SOURCEFOLDER=${SOURCE_FOLDER_NAME}" -t ${{ env.IMAGE_PATH }}:${{ github.sha }} .
           docker tag ${{ env.IMAGE_PATH }}:${{ github.sha }} ${{ env.IMAGE_PATH }}:latest
 
       - name: Push Docker Image
