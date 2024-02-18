@@ -11,7 +11,6 @@ from fastapi import UploadFile, File
 from pydantic import BaseModel
 import json
 from openai import OpenAI
-from pydub import AudioSegment
 
 
 from typing import Annotated
