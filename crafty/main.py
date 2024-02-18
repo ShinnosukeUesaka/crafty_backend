@@ -1,6 +1,6 @@
 import dotenv
 
-dotenv.load_dotenv('project_name/.env', override=True)
+dotenv.load_dotenv('crafty/.env', override=True)
 
 from pathlib import Path
 from fastapi import FastAPI, Header, HTTPException, Request
@@ -29,7 +29,7 @@ class ExampleInput(BaseModel):
 
     
 
-# project_name endpoint
+# crafty endpoint
 @app.get("/")
 def read_root():
     return {"Hello": "World"}

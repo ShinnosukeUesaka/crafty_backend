@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "project_name"
+name = "crafty"
 version = "0.1.0"
 description = ""
 authors = ["ShinnosukeUesaka <shinnosuke.uesaka@gmail.com>"]

@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref_name == 'dev' || github.ref_name == 'main'
     env:
-      IMAGE_NAME: project_name  ### change here
+      IMAGE_NAME: crafty  ### change here
       SOURCE_FOLDER_NAME: project_name ## change here
-      GCP_PROJECT_ID: project_id
+      GCP_PROJECT_ID: crafty-f348c
       ARTIFACT_REGISTRY_REGION: asia-northeast1-docker.pkg.dev
       CLOUD_RUN_REGION: asia-northeast1
     steps:
