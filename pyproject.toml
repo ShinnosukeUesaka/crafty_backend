@@ -13,6 +13,7 @@ pydantic = "^2.6.1"
 python-dotenv = "^1.0.1"
 uvicorn = "^0.27.1"
 firebase-admin = "^6.4.0"
+python-multipart = "^0.0.9"
 
 
 [build-system]
