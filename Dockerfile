@@ -21,4 +21,4 @@ RUN poetry install --no-root
 
 COPY ./${SOURCEFOLDER} ./${SOURCEFOLDER}
 
-CMD exec uvicorn ${SOURCEFOLDER}.main:app --host 0.0.0.0 --port ${PORT} --workers 1
+CMD exec uvicorn crafty.main:app --host 0.0.0.0 --port ${PORT} --workers 1
