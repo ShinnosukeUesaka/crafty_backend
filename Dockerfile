@@ -1,5 +1,5 @@
 FROM python:3.11
-ARG source_folder
+ARG SOURCEFOLDER
 
 ENV PYTHONUNBUFFERED True \
     APP_HOME /app \
@@ -19,6 +19,6 @@ COPY pyproject.toml ./
 #RUN poetry install --without dev
 RUN poetry install --no-root
 
-COPY ./${source_folder} ./${source_folder}
+COPY ./${SOURCEFOLDER} ./${SOURCEFOLDER}
 
-CMD exec uvicorn ${source_folder}.main:app --host 0.0.0.0 --port ${PORT} --workers 1
+CMD exec uvicorn ${SOURCEFOLDER}.main:app --host 0.0.0.0 --port ${PORT} --workers 1
