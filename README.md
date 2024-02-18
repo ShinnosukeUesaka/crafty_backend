@@ -13,7 +13,7 @@
    2. Cloud Run Admin
    3. Artifact Registry Administrator
    4. Artifact Registry Service Agent
-4. Set GCP_SA_KEY in github secret
+4. Set GCP_SA_KEY in github repository secret
 5. Set project name and gcp project id
 6. Commit and push the change to github
 7. Set OPENAI_API_KEY in cloud run
