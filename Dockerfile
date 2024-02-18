@@ -1,5 +1,7 @@
 FROM python:3.11
 ARG SOURCEFOLDER
+ENV SOURCEFOLDER=$SOURCEFOLDER
+
 
 ENV PYTHONUNBUFFERED True \
     APP_HOME /app \
@@ -21,4 +23,4 @@ RUN poetry install --no-root
 
 COPY ./${SOURCEFOLDER} ./${SOURCEFOLDER}
 
-CMD exec uvicorn ${SOURCEFOLDER}.main:app --host 0.0.0.0 --port ${PORT} --workers 1
+CMD ["sh", "-c", "exec uvicorn ${SOURCEFOLDER}.main:app --host 0.0.0.0 --port ${PORT} --workers 1"]
