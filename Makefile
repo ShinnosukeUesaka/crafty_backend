@@ -10,6 +10,6 @@ update-name:
 	sed -i '' 's/$(OLD_NAME)/'$$NEW_NAME'/g' $$NEW_NAME/main.py; \
 	sed -i '' 's/^name = "$(OLD_NAME)"/name = "'$$NEW_NAME'"/' pyproject.toml; \
 	sed -i '' 's/IMAGE_NAME: $(OLD_NAME)/IMAGE_NAME: '$$NEW_NAME'/' .github/workflows/deploy.yml; \
-	sed -i '' 's/SOURCE_FOLDER_NAME: $(OLD_NAME)/SOURCE_FOLDER_NAME: '$$NEW_NAME'/' workflows/deploy.yml; \
+	sed -i '' 's/SOURCE_FOLDER_NAME: $(OLD_NAME)/SOURCE_FOLDER_NAME: '$$NEW_NAME'/' .github/workflows/deploy.yml; \
 	echo "Updating GCP Project id from  to $$PROJECT_ID..."; \
 	sed -i '' 's/GCP_PROJECT_ID: .*/GCP_PROJECT_ID: '$$PROJECT_ID'/' .github/workflows/deploy.yml;
