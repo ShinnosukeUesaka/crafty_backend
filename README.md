@@ -9,6 +9,10 @@
       2. Name: prd-{project_name}
       3. Region: asia-northeast1 (Tokyo)
 3. Create service account with the following permissions
+   1. Cloud Deploy Runner
+   2. Cloud Run Admin
+   3. Artifact Registry Administrator
+   4. Artifact Registry Service Agent
 4. Set GCP_SA_KEY in github secret
 5. Set project name and gcp project id
 6. Commit and push the change to github
