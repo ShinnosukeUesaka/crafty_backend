@@ -3,7 +3,7 @@ import os
 
 if os.getenv("ENVIRONMENT") == "local":
     print("local")
-    cred = credentials.Certificate("genote_llm/firebase_key.json")
+    cred = credentials.Certificate("crafty/firebase_key.json")
     initialize_app(cred)
 else:
     print("cloud")

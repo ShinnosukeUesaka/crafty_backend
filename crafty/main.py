@@ -11,6 +11,11 @@ from fastapi import UploadFile, File
 from pydantic import BaseModel
 import json
 from openai import OpenAI
+from pydub import AudioSegment
+
+
+from typing import Annotated
+
 
 client = OpenAI()
 
@@ -32,19 +37,26 @@ class ExampleInput(BaseModel):
 
 # audio transcription endpoint
 @app.post("/transcribe")
-def transcribe_audio(file: UploadFile = File(...)):
-    print(file)
+def create_file(audio: UploadFile = File(...)):
+    print(audio)
     # audio_file= open("/path/to/file/audio.mp3", "rb")
     # transcript = client.audio.transcriptions.create(
     #     model="whisper-1", 
     #     file=audio_file
     # )
     # use the file to transcribe
-    
-    audio_file = file.file.read()
+    print(audio.content_type)
+    file = audio.file.read()
+    # save file to disk
+    with open("audio.webm", "wb") as f:
+        f.write(file)
+    # audio = AudioSegment.from_file("audio.ogg", format="ogg")
+    # audio.export("outaudio.mp3", format="mp3") 
+    file = open("audio.webm", "rb")
+        
     transcript = client.audio.transcriptions.create(
         model="whisper-1", 
-         file=audio_file
+         file=file
     )
     transcribed_text = transcript.text
     

@@ -8,6 +8,7 @@ update-name:
 	echo "Updating project name from $(OLD_NAME) to $$NEW_NAME..."; \
 	mv $(OLD_NAME) $$NEW_NAME; \
 	sed -i '' 's/$(OLD_NAME)/'$$NEW_NAME'/g' $$NEW_NAME/main.py; \
+	sed -i '' 's/$(OLD_NAME)/'$$NEW_NAME'/g' $$NEW_NAME/firebase_utils.py; \
 	sed -i '' 's/^name = "$(OLD_NAME)"/name = "'$$NEW_NAME'"/' pyproject.toml; \
 	sed -i '' 's/IMAGE_NAME: $(OLD_NAME)/IMAGE_NAME: '$$NEW_NAME'/' .github/workflows/deploy.yml; \
 	sed -i '' 's/SOURCE_FOLDER_NAME: $(OLD_NAME)/SOURCE_FOLDER_NAME: '$$NEW_NAME'/' .github/workflows/deploy.yml; \
